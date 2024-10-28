@@ -10,5 +10,6 @@ public interface LibroRepository extends JpaRepository<Libro, Long> {
 
     //Devuelvo dentro de la lista de libros los que tengan el mismo nombre
     List<Libro> findByGeneroIgnoreCase(String genero);
+    List<Libro> findByAutorIgnoreCase(String autor);
 
 }

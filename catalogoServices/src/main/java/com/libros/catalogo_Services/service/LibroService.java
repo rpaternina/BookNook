@@ -32,7 +32,10 @@ public class LibroService {
         return libroRepository.findByGeneroIgnoreCase(genero);
     }
 
+    public List<Libro> getByNombreAutor(String autor){
+        return libroRepository.findByAutorIgnoreCase(autor);
+    }
 
-
+    
 
 }

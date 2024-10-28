@@ -29,17 +29,36 @@ public class LibroController {
         return libroService.addLibro(libro);
     }
 
-    
+    /**
+     * Mostrar todos los libros
+     * @return
+     */
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Libro> getAllLibros(){
         return libroService.getAllLibros();
     }
 
-    @GetMapping("/{genero}")
+    /**
+     * Mostrar libros por genero
+     * @param genero
+     * @return
+     */
+    @GetMapping("/genero/{genero}")
     @ResponseStatus(HttpStatus.OK)
     public List<Libro> getLibroByname(@PathVariable String genero){
         return libroService.getByGenero(genero);
+    }
+
+    /**
+     * Mostrar libros por autor
+     * @param autor
+     * @return
+     */
+    @GetMapping("/autor/{autor}")
+    @ResponseStatus(HttpStatus.OK)
+    public List<Libro> getByNombreAutor(@PathVariable String autor){
+        return libroService.getByNombreAutor(autor.trim());
     }
 
 }
