@@ -33,6 +33,7 @@
 
 	<modules>
 		<module>catalogoServices</module>
+		<module>userServices</module>
 	</modules>
 	<dependencies>
 		<dependency>
