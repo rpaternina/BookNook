@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @AllArgsConstructor
@@ -28,11 +29,11 @@ public class LibroService {
 
 
     //Devuelvo una lista de generos de los libros
-    public List<Libro> getByGenero(String genero){
+    public Optional<Libro> getByGenero(String genero){
         return libroRepository.findByGeneroIgnoreCase(genero.trim());
     }
 
-    public List<Libro> getByNombreAutor(String autor){
+    public Optional<Libro> getByNombreAutor(String autor){
         return libroRepository.findByAutorIgnoreCase(autor.trim());
     }
 

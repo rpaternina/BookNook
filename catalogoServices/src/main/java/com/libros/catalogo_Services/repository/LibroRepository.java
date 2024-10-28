@@ -5,12 +5,13 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 public interface LibroRepository extends JpaRepository<Libro, Long> {
 
     //Devuelvo dentro de la lista de libros los que tengan el mismo nombre
-    List<Libro> findByGeneroIgnoreCase(String genero);
-    List<Libro> findByAutorIgnoreCase(String autor);
+    Optional<Libro> findByGeneroIgnoreCase(String genero);
+    Optional<Libro> findByAutorIgnoreCase(String autor);
     Libro findByNombre(String nombre);
 
 }

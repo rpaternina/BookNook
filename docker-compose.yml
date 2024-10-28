@@ -1,6 +1,6 @@
 
 services:
-  ### BASE DE DATOS DE INVENTARIO POSTGRESQL
+  ### BASE DE DATOS DE CATALOGOS POSTGRESQL
   db-catalogo:
     container_name: db-catalogo
     image: postgres:15.2
@@ -14,3 +14,18 @@ services:
     expose:
       - 5432
     command: -p 5432
+
+    ### BASE DE DATOS DE USUARIOS POSTGRESQL
+  db-usuarios:
+    container_name: db-user
+    image: postgres:15.2
+    restart: unless-stopped
+    environment:
+        POSTGRES_DB: usuarios
+        POSTGRES_USER: rpaternina
+        POSTGRES_PASSWORD: 123456
+    ports:
+      - 5433:5433
+    expose:
+      - 5433
+    command: -p 5433

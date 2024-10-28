@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
@@ -46,7 +47,7 @@ public class LibroController {
      */
     @GetMapping("/genero/{genero}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Libro> getLibroByname(@PathVariable String genero){
+    public Optional<Libro> getLibroByname(@PathVariable String genero){
         return libroService.getByGenero(genero);
     }
 
@@ -57,7 +58,7 @@ public class LibroController {
      */
     @GetMapping("/autor/{autor}")
     @ResponseStatus(HttpStatus.OK)
-    public List<Libro> getByNombreAutor(@PathVariable String autor){
+    public Optional<Libro> getByNombreAutor(@PathVariable String autor){
         return libroService.getByNombreAutor(autor);
     }
 
