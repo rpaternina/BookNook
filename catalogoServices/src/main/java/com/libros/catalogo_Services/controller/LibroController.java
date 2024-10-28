@@ -58,7 +58,13 @@ public class LibroController {
     @GetMapping("/autor/{autor}")
     @ResponseStatus(HttpStatus.OK)
     public List<Libro> getByNombreAutor(@PathVariable String autor){
-        return libroService.getByNombreAutor(autor.trim());
+        return libroService.getByNombreAutor(autor);
+    }
+
+    @GetMapping("/nombre/{nombre}")
+    @ResponseStatus(HttpStatus.OK)
+    public Libro getByNombre(@PathVariable String nombre){
+        return libroService.getByNombre(nombre);
     }
 
 }

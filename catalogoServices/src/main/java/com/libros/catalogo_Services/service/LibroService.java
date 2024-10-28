@@ -29,13 +29,15 @@ public class LibroService {
 
     //Devuelvo una lista de generos de los libros
     public List<Libro> getByGenero(String genero){
-        return libroRepository.findByGeneroIgnoreCase(genero);
+        return libroRepository.findByGeneroIgnoreCase(genero.trim());
     }
 
     public List<Libro> getByNombreAutor(String autor){
-        return libroRepository.findByAutorIgnoreCase(autor);
+        return libroRepository.findByAutorIgnoreCase(autor.trim());
     }
 
-    
+    public Libro getByNombre(String nombre){
+        return libroRepository.findByNombre(nombre.trim());
+    }
 
 }
