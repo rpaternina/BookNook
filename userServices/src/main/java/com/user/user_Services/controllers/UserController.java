@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 @AllArgsConstructor
 public class UserController {
 
+
     @Autowired
     private final UserService userService;
 
@@ -25,6 +26,7 @@ public class UserController {
 
     /*
     @PostMapping("/login")
-    @ResponseStatus(HttpStatus.OK)
-    public ResponseEntity<String> login(@RequestBody)*/
+    public ResponseEntity<String> login(@RequestBody LoginRequest loginRequest){
+        return ResponseEntity.ok( "Iniciado con exito");
+    }*/
 }

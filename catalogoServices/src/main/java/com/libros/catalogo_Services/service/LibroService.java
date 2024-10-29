@@ -5,7 +5,9 @@ import com.libros.catalogo_Services.entity.Libro;
 import com.libros.catalogo_Services.repository.LibroRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 import java.util.Optional;
@@ -27,10 +29,10 @@ public class LibroService {
         return libroRepository.findAll();
     }
 
-
     //Devuelvo una lista de generos de los libros
     public Optional<Libro> getByGenero(String genero){
         return libroRepository.findByGeneroIgnoreCase(genero.trim());
+
     }
 
     public Optional<Libro> getByNombreAutor(String autor){
