@@ -13,27 +13,17 @@ import java.util.Optional;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping("/api/libros")
-public class LibroController {
+@RequestMapping("/api/public/libros")
+public class LibroControllerPublic {
 
     @Autowired
     private final LibroService libroService;
 
     /**
-     * Agregar libros
-     * @param libro
-     * @return
-     */
-    @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public Libro addLibros(@RequestBody Libro libro){
-        return libroService.addLibro(libro);
-    }
-
-    /**
      * Mostrar todos los libros
      * @return
      */
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Libro> getAllLibros(){
