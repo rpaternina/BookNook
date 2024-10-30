@@ -23,19 +23,19 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable()) // Desactiva csrf
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers("/api/usuarios/registrar","api/usuarios/login","/api/libros",
-                                //"/api/libros/genero/{genero}",
-                                "/api/libros/nombre/{nombre}" , "/api/libros/autor/{autor}"
+                                "/api/libros/genero/{genero}", "/api/libros/nombre/{nombre}" ,
+                                "/api/libros/autor/{autor}"
                         ).permitAll()// Permite acceso sin login a rutas publicas
-                        .anyRequest().authenticated()) // Requiere autenticacion para cualquier otra ruta
-                .formLogin(form -> form // Configura el formulario de inicio de sesion
-                        .loginPage("/login") //Ruta personalizada para la pagina de inicio de sesion
+                        .anyRequest().authenticated()); // Requiere autenticacion para cualquier otra ruta
+               /* .formLogin(form -> form // Configura el formulario de inicio de sesion
+                        .loginPage("/api/libros") //Ruta personalizada para la pagina de inicio de sesion
                         .permitAll()) // Permite acceso a todos a la pagina de inicio de sesion
                 .logout(logout -> logout //Configura la funcionalidad de cierre de sesion
-                        .permitAll()); // Permite acceso a todos para cerrar sesion
+                        .permitAll());*/ // Permite acceso a todos para cerrar sesion
 
         return http.build();
     }
-
+    
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new BCryptPasswordEncoder();

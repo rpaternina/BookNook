@@ -47,7 +47,7 @@ public class LibroController {
      */
     @GetMapping("/genero/{genero}")
     @ResponseStatus(HttpStatus.OK)
-    public Optional<Libro> getLibroByname(@PathVariable String genero){
+    public List<Libro> getLibroByname(@PathVariable String genero){
         return libroService.getByGenero(genero);
     }
 
@@ -61,6 +61,7 @@ public class LibroController {
     public Optional<Libro> getByNombreAutor(@PathVariable String autor){
         return libroService.getByNombreAutor(autor);
     }
+
 
     @GetMapping("/nombre/{nombre}")
     @ResponseStatus(HttpStatus.OK)

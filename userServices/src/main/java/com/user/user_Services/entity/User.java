@@ -25,4 +25,5 @@ public class User {
     private String correoElectronico;
 
     private String contrasena;
+    private String role;
 }

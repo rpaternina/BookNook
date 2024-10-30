@@ -29,4 +29,8 @@ public class UserService {
     public Optional<User> findBycorreo(String correoElectronico){
         return userRepository.findByCorreoElectronico(correoElectronico);
     }
+
+    public boolean validatePassword(String rawPassword, String encodedPassword) {
+        return passwordEncoder.matches(rawPassword, encodedPassword);
+    }
 }

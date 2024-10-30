@@ -23,5 +23,6 @@ public class Libro {
     private String genero;
     private String autor;
     private String novedades;
+    private Float precio;
 
 }

@@ -30,9 +30,8 @@ public class LibroService {
     }
 
     //Devuelvo una lista de generos de los libros
-    public Optional<Libro> getByGenero(String genero){
+    public List<Libro> getByGenero(String genero){
         return libroRepository.findByGeneroIgnoreCase(genero.trim());
-
     }
 
     public Optional<Libro> getByNombreAutor(String autor){
