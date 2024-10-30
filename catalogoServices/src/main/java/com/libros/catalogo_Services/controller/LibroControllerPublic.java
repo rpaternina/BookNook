@@ -51,12 +51,23 @@ public class LibroControllerPublic {
     public Optional<Libro> getByNombreAutor(@PathVariable String autor){
         return libroService.getByNombreAutor(autor);
     }
-
-
+    
     @GetMapping("/nombre/{nombre}")
     @ResponseStatus(HttpStatus.OK)
     public Libro getByNombre(@PathVariable String nombre){
         return libroService.getByNombre(nombre);
+    }
+
+    // Endpoint para actualizar un libro específico
+    @PutMapping("/{id}")
+    public Libro actualizarLibro(@PathVariable Long id, @RequestBody Libro libroDetalles) {
+        return libroService.actualizarLibro(id, libroDetalles); // Actualiza y retorna el libro.
+    }
+
+    // Endpoint para eliminar un libro
+    @DeleteMapping("/{id}")
+    public void eliminarLibro(@PathVariable Long id) {
+        libroService.eliminarLibro(id); // Llama al servicio para eliminar el libro.
     }
 
 }

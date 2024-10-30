@@ -42,4 +42,18 @@ public class LibroService {
         return libroRepository.findByNombre(nombre.trim());
     }
 
+    // Actualizar libro
+    public Libro actualizarLibro(Long id, Libro libroDetalles) {
+        Libro libro = libroRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Libro no encontrado"));
+
+        libro.setGenero(libroDetalles.getGenero());
+        return libroRepository.save(libro); // Guarda los cambios.
+    }
+
+    // Eliminar
+    public void eliminarLibro(Long id) {
+        libroRepository.deleteById(id); // Elimina el libro por ID.
+    }
+
 }
