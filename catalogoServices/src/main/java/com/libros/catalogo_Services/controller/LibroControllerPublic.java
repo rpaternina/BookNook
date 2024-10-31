@@ -23,6 +23,7 @@ public class LibroControllerPublic {
      * Mostrar todos los libros
      * @return
      */
+
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Libro> getAllLibros(){
@@ -56,6 +57,7 @@ public class LibroControllerPublic {
     public Libro getByNombre(@PathVariable String nombre){
         return libroService.getByNombre(nombre);
     }
+
 
     // Endpoint para actualizar un libro específico
     @PutMapping("/{id}")

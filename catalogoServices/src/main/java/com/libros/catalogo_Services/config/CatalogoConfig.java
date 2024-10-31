@@ -22,10 +22,12 @@ public class CatalogoConfig {
                         // Las que tengan private van a ser privadas
                         .requestMatchers("/api/private/libros/**").authenticated()
                         // Los que sean admin van a necesitar autenticacion
-                        .requestMatchers("/api/private/libros/add")
-                        .hasAuthority("admin").anyRequest().authenticated())
+                        /*.requestMatchers("/api/private/libros/add")
+                        .hasAuthority("admin").anyRequest().authenticated())*/)
                 .formLogin(Customizer.withDefaults())
                 .build();
     }
+
+
 
 }
