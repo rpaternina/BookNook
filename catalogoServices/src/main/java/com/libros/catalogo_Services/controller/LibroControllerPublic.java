@@ -23,7 +23,6 @@ public class LibroControllerPublic {
      * Mostrar todos los libros
      * @return
      */
-
     @GetMapping
     @ResponseStatus(HttpStatus.OK)
     public List<Libro> getAllLibros(){
